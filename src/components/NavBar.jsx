@@ -1,5 +1,5 @@
-import React from 'react'
-import '../components/NavBar.css'
+import './NavBar.css'
+import CartWidget from './CartWidget.jsx'
 
 function NavBar() {
     return (
@@ -11,7 +11,8 @@ function NavBar() {
                 <p className = "navButton">Button 1</p>
                 <p className = "navButton">Button 2</p>
                 <p className = "navButton">Button 3</p>
-                <p className = "navButton">Button 3</p>
+                <p className = "navButton">Button 4</p>
+                <CartWidget />
             </nav>
         </div>
     )
