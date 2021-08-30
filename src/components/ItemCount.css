@@ -1,0 +1,66 @@
+.itemContainer{
+    height: 225px; width: 350px;
+    margin: auto;
+
+
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: space-evenly;
+
+    background-color: rgb(135, 138, 145);
+    border: 5px double black;
+}
+
+.itemCounter{
+    height: auto; width: 80%;
+
+    display: flex; flex-direction: row;
+    justify-content: space-between
+}
+
+button{
+    padding: 10px;
+    display: inline-block;
+
+    font-size: 14px; color: black;
+    text-align: center; text-decoration: none;
+    
+    border: 2px solid darkgray; border-radius: 8%;
+    box-shadow: rgb(54, 54, 54) 4px 4px 5px;
+    background-color: #e7e7e7; 
+
+    transition-delay: 0s;
+    transition-duration: 0.5s;
+}
+
+.buttonCount{
+    height: 40px; width: 40px;
+}
+
+.buttonBuy{
+    height: 40px; width: 80%;
+    font-size: 16px; font-weight: bold; font-style: italic;
+}
+
+.buttonCount:hover, .buttonBuy:hover{
+    font-weight: bolder; font-size: 18px;
+    opacity: 60%;
+}
+
+label{
+    display: flex; align-items: center; justify-content: center;
+
+    text-align: center;
+
+    border: 2px solid darkgray; border-radius: 8%;
+    box-shadow: rgb(54, 54, 54) 4px 4px 5px;
+    background-color: #e7e7e7; 
+}
+
+.labelStock{
+    height: 40px; width: 80%;
+}   
+
+.labelCount{
+    height: 36px; width: 45%;
+    font-size: 20px; font-weight: bolder;
+}
