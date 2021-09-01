@@ -36,3 +36,9 @@ h2{
     font-size: 60px;
     letter-spacing: 5px;
 }
+
+.loading{
+    margin: 100px;
+
+    font-size: 30px; font-style: italic;
+}

@@ -1,6 +1,5 @@
-import NavBar from './components/NavBar.jsx'
+import NavBar from './components/Navigation Bar/NavBar.jsx'
 import Intro from './components/ItemListContainer'
-import ItemCount from './components/ItemCount.jsx'
 
 function App() {
 

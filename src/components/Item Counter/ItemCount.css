@@ -64,3 +64,16 @@ label{
     height: 36px; width: 45%;
     font-size: 20px; font-weight: bolder;
 }
+
+.cardContainer{
+    margin: 50px;
+
+    display: flex; flex-direction: row;
+    justify-content: space-evenly;
+
+    text-align: center;
+}
+
+.itemCard{
+    height: 250px; width: 250px;
+}

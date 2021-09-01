@@ -16,7 +16,7 @@ const ItemCount = ({initial, stock, onAdd, onAddError}) => {
         if(count > initial) setCount(count - 1)
     }   
 
-    // Eventos al clickear el boton de comprar. La respuesta varia de si hay ,o no, stock:
+    // Eventos al clickear el boton de comprar. La respuesta varia de si hay , o no, stock:
     const handlerOnAdd=()=>{
         if(total > 0){
             onAdd(count)
