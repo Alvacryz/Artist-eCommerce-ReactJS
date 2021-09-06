@@ -1,15 +1,14 @@
 import NavBar from './components/Navigation Bar/NavBar.jsx'
-import Intro from './components/ItemListContainer'
+import ContainerItem from './components/ItemListContainer'
+import ContainerDetail from './components/ItemDetailContainer.jsx';
 
 function App() {
 
   return (
     <>
     <NavBar />
-    <Intro 
-    nombre = 'Placeholder.'
-    texto='Welcome to the page'
-    />
+    <ContainerItem/>
+    <ContainerDetail/>
     </>
   )
 }

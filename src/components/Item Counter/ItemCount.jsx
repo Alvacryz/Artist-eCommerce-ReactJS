@@ -1,7 +1,20 @@
 import {useState} from 'react';
 import './ItemCount.css'
  
-const ItemCount = ({initial, stock, onAdd, onAddError}) => {
+const ItemCount = ({initial, stock}) => {
+
+    // Si hay stock, ejecutara esta acción:
+    const onAdd =(count)=>{
+        console.log(`La cantidad de items comprados es: ${count}`)
+        alert(`You purchased ${count} items!`)
+    };
+  
+    // De no ser asi, se ejectuara esta acción:
+    function onAddError(){
+        console.log('No hay stock. Refresca la página.')
+        alert('There is no stock available!')
+    };
+
     // States para los valores de la unidad del contador y la cantidad de stock:
     const [count, setCount] = useState(initial)
     const [total, setTotal] = useState(stock)
