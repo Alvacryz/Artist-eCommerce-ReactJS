@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import { Link } from 'react-router-dom';
 import './ItemCount.css'
  
 const ItemCount = ({initial, stock}) => {
@@ -51,9 +52,9 @@ const ItemCount = ({initial, stock}) => {
                 <label className='labelCount'>{count}</label>
                 <button className='buttonCount' onClick={handlerRm}>-</button>
             </div>
-            
-            <button className='buttonBuy' onClick={handlerOnAdd}>Add to Cart</button>
-
+            <Link to='/'>
+                <button className='buttonBuy' onClick={handlerOnAdd}>Add to Cart</button>
+            </Link>
         </div>           
     )
 }

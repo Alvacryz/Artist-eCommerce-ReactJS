@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
-import './Navigation Bar/NavBar.css'
+import { useParams } from 'react-router';
+
 import Items from './ItemList.jsx'
 import { getProducts } from './Utils/Promises';
 
@@ -7,13 +8,22 @@ const ContainerItem = () => {
 
   const [productos, setProducto] = useState({})
   const [loading, setLoading] = useState(true)
+
+  const {categoryid} = useParams()
     
   useEffect(() => {
-    getProducts.then(res => {
+    if(categoryid===undefined){
+      getProducts.then(res => {
         setProducto(res)
         setLoading(false)
-      }) 
-    })
+      })
+    } else{
+      getProducts.then(res => {
+        setProducto(res.filter(r => categoryid===r.type))
+      })
+        setLoading(false)
+    }
+    }, [categoryid])
 
     return (
         <>

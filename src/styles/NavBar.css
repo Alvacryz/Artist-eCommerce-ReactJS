@@ -1,0 +1,45 @@
+/* Reset default style*/
+a{
+    margin: 0;
+    text-decoration: none;
+}
+
+/* Navigator Styling */
+.navStyle{
+    height: 75px;
+
+    display: flex; flex-direction: row; 
+    justify-content: space-around; align-items: center;
+
+    background-color: rgb(97, 96, 96);
+    border: 1px solid black;
+}
+
+.navButton{
+    height: 45px; width: 125px;
+
+    font-size: 16px; font-style: italic; text-align: center;
+    border: 1px solid black; border-radius: 5%;
+    background-color: rgb(221, 221, 221);
+
+    transition-delay: 0.1s;
+    transition-duration: 0.5s;
+} .navButton:hover{
+    opacity: 50%;
+    font-size: 19px; font-weight: bold;}
+
+/* Logo Styling */
+.logo{
+    margin: 0px;
+    font-size: 40px; color: white;
+    letter-spacing: 15px;
+
+    transition-delay: 0.1s;
+    transition-duration: 0.5s;
+} .logo:hover{
+    color: chocolate;}
+
+/* Cart Widget Styling*/
+.navIcon{
+    width: 55px;
+}

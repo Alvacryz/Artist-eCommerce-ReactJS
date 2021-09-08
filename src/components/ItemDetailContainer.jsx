@@ -1,25 +1,30 @@
 import {useState, useEffect} from 'react'
+import {useParams} from 'react-router';
+
+import {getProducts} from './Utils/Promises.js';
+
+import '../styles/CardDetail.css'
+
 import ItemDetail from './ItemDetail.jsx'
-import ItemCount from './Item Counter/ItemCount.jsx';
-import {getProduct} from './Utils/Promises.js';
 
 const ContainerDetail = () => {
   const [producto, setProducto] = useState({})
   const [loading, setLoading] = useState(true)
-    
+
+  const {id} = useParams()
+
   useEffect( () => {
-    getProduct.then(res => {
-        setProducto(res)
-        setLoading(false)
-      }) 
-    }, [])
+    getProducts.then((res) => {
+      setProducto(res.find((i) => parseInt(id) === i.id));
+      setLoading(false);
+    });
+  }, [id]);
 
     return(
       <>
       {loading ? <h2 className='loading'>Cargando Detalles...</h2>:
       <div className='cardDetailContainer'>
         <ItemDetail producto={producto} />
-        <ItemCount initial={1} stock={producto.stockNumber}/>
       </div>}
       </>
     )

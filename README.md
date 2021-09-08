@@ -1,3 +1,7 @@
+# Idea para el proyecto:
+
+El proyecto es en base a una simple pagina de e-commerce para el store de un artista independiente en el cual presenta distintos tipos de obras artisticas con sus diferentes niveles de tamaño y detalle para la venta de su servicio.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

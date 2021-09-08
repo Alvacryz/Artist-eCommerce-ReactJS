@@ -1,7 +1,6 @@
 .itemContainer{
-    height: 225px; width: 350px;
-    margin: 50px;
-
+    height: 200px; width: 350px;
+    margin: auto;
 
     display: flex; flex-direction: column;
     align-items: center; justify-content: space-evenly;
@@ -15,21 +14,6 @@
 
     display: flex; flex-direction: row;
     justify-content: space-between
-}
-
-button{
-    padding: 10px;
-    display: inline-block;
-
-    font-size: 14px; color: black;
-    text-align: center; text-decoration: none;
-    
-    border: 2px solid darkgray; border-radius: 8%;
-    box-shadow: rgb(54, 54, 54) 4px 4px 5px;
-    background-color: #e7e7e7; 
-
-    transition-delay: 0s;
-    transition-duration: 0.5s;
 }
 
 .buttonCount{
@@ -63,24 +47,4 @@ label{
 .labelCount{
     height: 36px; width: 45%;
     font-size: 20px; font-weight: bolder;
-}
-
-.cardContainer{
-    margin: 50px;
-
-    display: flex; flex-direction: row;
-    justify-content: space-evenly;
-
-    text-align: center;
-}
-
-.cardDetailContainer{
-    display: flex; flex-direction: column;
-    align-items: center;
-
-    text-align: center;
-}
-
-.itemCard{
-    height: 250px; width: 250px;
 }

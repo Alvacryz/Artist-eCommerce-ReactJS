@@ -1,0 +1,11 @@
+.headerStyle{
+    height: 250px;
+
+    display: flex;
+    justify-content: center; align-items: center;
+
+    font-weight: bolder; letter-spacing: 10px;
+    background-color: rgb(204, 204, 204);
+
+    font-size: 40px; letter-spacing: 20px;
+}
