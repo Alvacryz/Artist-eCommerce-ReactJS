@@ -1,9 +1,14 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import ItemCount from './Item Counter/ItemCount.jsx';
 import '../styles/CardDetail.css'
 
 // ----- Item Details Mounting HTML:
 const ItemDetail = ({producto}) => {
-  console.log(producto.name)
+
+  const [count, setCount] = useState(1)
+  const [display, setdisplay] = useState('hidden')
+  
     return(
       <>
       <div key={producto.id} className='cardWrapper'>
@@ -12,7 +17,13 @@ const ItemDetail = ({producto}) => {
             <h1 className='cardDetailName'>{producto.name}</h1>
             <p className='cardDetailDesc'>{producto.desc}</p>
             <p>Precio: "{producto.price}$"</p>
-            <ItemCount initial={1} stock={producto.stock}/>
+            {display ? 
+            <ItemCount count={count} setCount={setCount} setDisplay={setdisplay} stock={producto.stock}/>
+            :
+            <Link to='/cart'>
+            <button className='buttonBuy'>Finish your purchase</button>
+            </Link>
+            }
         </div>
       </div>
       </>

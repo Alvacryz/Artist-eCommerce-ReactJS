@@ -1,8 +1,9 @@
-import {useState} from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import './ItemCount.css'
  
-const ItemCount = ({initial, stock}) => {
+const ItemCount = ({count, setCount, setDisplay, stock}) => {
+    // States para los valores de la unidad del contador y la cantidad de stock:
+    const [total, setTotal] = useState(stock)
 
     // Si hay stock, ejecutara esta acción:
     const onAdd =(count)=>{
@@ -15,27 +16,24 @@ const ItemCount = ({initial, stock}) => {
         console.log('No hay stock. Refresca la página.')
         alert('There is no stock available!')
     };
-
-    // States para los valores de la unidad del contador y la cantidad de stock:
-    const [count, setCount] = useState(initial)
-    const [total, setTotal] = useState(stock)
     
     // Aumentar la unidad del contador
-    const handlerAdd =()=>{
+    const handlerAdd = () =>{
         if(count < total) setCount(count +1)
     }
 
     // Restar la unidad del contador
-    const handlerRm =()=>{
-        if(count > initial) setCount(count - 1)
+    const handlerRm = () =>{
+        if(count > 1) setCount(count - 1)
     }   
 
     // Eventos al clickear el boton de comprar. La respuesta varia de si hay , o no, stock:
-    const handlerOnAdd=()=>{
+    const handlerOnAdd = () =>{
         if(total > 0){
             onAdd(count)
-            setCount(initial)
+            setCount(count)
             setTotal(total - count)
+            setDisplay(false)
         }  
         else{
             onAddError()
@@ -52,10 +50,8 @@ const ItemCount = ({initial, stock}) => {
                 <label className='labelCount'>{count}</label>
                 <button className='buttonCount' onClick={handlerRm}>-</button>
             </div>
-            <Link to='/'>
-                <button className='buttonBuy' onClick={handlerOnAdd}>Add to Cart</button>
-            </Link>
-        </div>           
+            <button className='buttonBuy' onClick={handlerOnAdd}>Add to Cart</button>
+        </div>
     )
 }
 
