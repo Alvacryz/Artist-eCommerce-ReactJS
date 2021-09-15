@@ -1,14 +1,20 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+
 import ItemCount from './Item Counter/ItemCount.jsx';
+import { CartContext } from '../context/CartContext.jsx';
 import '../styles/CardDetail.css'
 
 // ----- Item Details Mounting HTML:
-const ItemDetail = ({producto}) => {
+const ItemDetail = ( {producto} ) => {
+  const [display, setdisplay] = useState('hidden');
+  const { setCart, addItem } = useContext(CartContext);
 
-  const [count, setCount] = useState(1)
-  const [display, setdisplay] = useState('hidden')
-  
+  const onAdd = (count) => {
+    setCart(count);
+    addItem(producto, count);
+  };
+
     return(
       <>
       <div key={producto.id} className='cardWrapper'>
@@ -18,7 +24,7 @@ const ItemDetail = ({producto}) => {
             <p className='cardDetailDesc'>{producto.desc}</p>
             <p>Precio: "{producto.price}$"</p>
             {display ? 
-            <ItemCount count={count} setCount={setCount} setDisplay={setdisplay} stock={producto.stock}/>
+            <ItemCount onAdd={onAdd} setDisplay={setdisplay} stock={producto.stock}/>
             :
             <Link to='/cart'>
             <button className='buttonBuy'>Finish your purchase</button>

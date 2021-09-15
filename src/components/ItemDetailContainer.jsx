@@ -8,12 +8,12 @@ import '../styles/CardDetail.css'
 import ItemDetail from './ItemDetail.jsx'
 
 const ContainerDetail = () => {
-  const [producto, setProducto] = useState({})
-  const [loading, setLoading] = useState(true)
+  const [producto, setProducto] = useState({});
+  const [loading, setLoading] = useState(true);
 
-  const {id} = useParams()
+  const {id} = useParams();
 
-  useEffect( () => {
+  useEffect(() => {
     getProducts.then((res) => {
       setProducto(res.find((i) => parseInt(id) === i.id));
       setLoading(false);

@@ -1,16 +1,11 @@
 import { useState } from 'react';
 import './ItemCount.css'
  
-const ItemCount = ({count, setCount, setDisplay, stock}) => {
+const ItemCount = ({onAdd, setDisplay, stock}) => {
     // States para los valores de la unidad del contador y la cantidad de stock:
-    const [total, setTotal] = useState(stock)
+    const [totalStock, setTotalStock] = useState(stock)
+    const [count, setCount] = useState(1)
 
-    // Si hay stock, ejecutara esta acción:
-    const onAdd =(count)=>{
-        console.log(`La cantidad de items comprados es: ${count}`)
-        alert(`You purchased ${count} items!`)
-    };
-  
     // De no ser asi, se ejectuara esta acción:
     function onAddError(){
         console.log('No hay stock. Refresca la página.')
@@ -19,7 +14,7 @@ const ItemCount = ({count, setCount, setDisplay, stock}) => {
     
     // Aumentar la unidad del contador
     const handlerAdd = () =>{
-        if(count < total) setCount(count +1)
+        if(count < totalStock) setCount(count +1)
     }
 
     // Restar la unidad del contador
@@ -29,10 +24,10 @@ const ItemCount = ({count, setCount, setDisplay, stock}) => {
 
     // Eventos al clickear el boton de comprar. La respuesta varia de si hay , o no, stock:
     const handlerOnAdd = () =>{
-        if(total > 0){
+        if(totalStock > 0){
             onAdd(count)
             setCount(count)
-            setTotal(total - count)
+            setTotalStock(totalStock - count)
             setDisplay(false)
         }  
         else{
@@ -43,7 +38,7 @@ const ItemCount = ({count, setCount, setDisplay, stock}) => {
     return (
         <div className = 'itemContainer'>
 
-            <label className='labelStock'>In Stock: {total}</label>
+            <label className='labelStock'>In Stock: {totalStock}</label>
 
             <div className='itemCounter'>
                 <button className='buttonCount' onClick={handlerAdd}>+</button>
