@@ -1,9 +1,13 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import '../../styles/Header.css'
 import '../../styles/NavBar.css'
 import CartWidget from './CartWidget.jsx'
 
 function NavBar() {
+
+    let currentLocation = useLocation();
+    console.log(currentLocation.pathname)
+
     return (
         <div className = "top">
             <header className = "headerStyle">
@@ -25,8 +29,14 @@ function NavBar() {
                 <Link to={'/category/illustration'}>
                     <button className = "navButton">Illustration</button>
                 </Link>
-
-                <CartWidget />
+                
+                {currentLocation.pathname !== '/cart' ? 
+                <>
+                    <CartWidget />
+                </>
+                :
+                null
+                }
             </nav>
         </div>
     )

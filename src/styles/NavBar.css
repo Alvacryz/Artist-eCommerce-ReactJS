@@ -41,5 +41,13 @@ a{
 
 /* Cart Widget Styling*/
 .navIcon{
-    width: 55px;
+    display: flex; flex-direction: row;
+    justify-content: center; align-items: center;
+    width: 60px;
+}
+
+.cartWidgetNumber{
+    margin: 0;
+    font-size: 14px; font-weight: bolder;
+    color: red;
 }
