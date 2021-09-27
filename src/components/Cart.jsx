@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useCartContext } from "../context/CartContext";
 import "../styles/Cart.css"
 import ItemCart from "./ItemCart";
+import Form from "./Form.jsx";
 
 const Cart = () => {
   const { cart, clearCart, cartItemsNumber, totalPrice } = useCartContext();
@@ -67,6 +68,7 @@ const Cart = () => {
           </button>
         </Link>
       )}
+      <Form cart={cart} total={total} clearCart={clearCart}/>
     </div>
   );
 };

@@ -17,7 +17,7 @@ const ContainerDetail = () => {
 
   const queryDB = query(collection(db, "items"), where("id", "==", idstring)) 
 
-  useEffect(() => {
+  useEffect( () => {
     onSnapshot( queryDB , (res) => {
       res.forEach( (i) => {
         setProducto(i.data());
