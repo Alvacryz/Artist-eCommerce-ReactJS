@@ -1,50 +1,41 @@
 .itemContainer{
-    height: 200px; width: 350px;
+    height: auto; width: 100%;
     margin: auto;
 
     display: flex; flex-direction: column;
-    align-items: center; justify-content: space-evenly;
+    align-items: center;
 
-    background-color: rgb(135, 138, 145);
-    border: 5px double black;
+}
+.itemContainer button{
+    height: 40px;
+
+    border: 1px solid rgb(163, 163, 163);
+    background-color: rgb(212, 212, 212);
+    font-size: 20px; letter-spacing: 3px;
+    cursor: pointer;
+} .itemContainer button:hover{
+    opacity: 80%;
 }
 
 .itemCounter{
-    height: auto; width: 80%;
+    width: 100%;
+    margin: 10px;
 
     display: flex; flex-direction: row;
-    justify-content: space-between
+    justify-content: space-between; align-items: center;
 }
-
-.buttonCount{
-    height: 40px; width: 40px;
-}
-
-.buttonBuy{
-    height: 40px; width: 80%;
-    font-size: 16px; font-weight: bold; font-style: italic;
-}
-
-.buttonCount:hover, .buttonBuy:hover{
-    font-weight: bolder; font-size: 18px;
-    opacity: 60%;
-}
-
-label{
-    display: flex; align-items: center; justify-content: center;
-
-    text-align: center;
-
-    border: 2px solid darkgray; border-radius: 8%;
-    box-shadow: rgb(54, 54, 54) 4px 4px 5px;
-    background-color: #e7e7e7; 
-}
-
-.labelStock{
-    height: 40px; width: 80%;
-}   
-
 .labelCount{
-    height: 36px; width: 45%;
-    font-size: 20px; font-weight: bolder;
+    height: 38px; width: 100%;
+    display: grid; align-items: center;
+
+    border-top: 1px solid rgb(163, 163, 163); 
+    border-bottom: 1px solid rgb(163, 163, 163);
+
+    font-size: 20px; font-style: italic;
+}
+.buttonCount{
+    width: 25%;
+}
+.buttonBuy{
+    width: 100%;
 }

@@ -37,8 +37,8 @@ const ItemCount = ({onAdd, setDisplay, stock}) => {
 
     return (
         <div className = 'itemContainer'>
-
-            <label className='labelStock'>In Stock: {totalStock}</label>
+            <label className='labelStock'>Open Commission Slots: {totalStock}</label>
+            <p>Quantity:</p>
 
             <div className='itemCounter'>
                 <button className='buttonCount' onClick={handlerAdd}>+</button>

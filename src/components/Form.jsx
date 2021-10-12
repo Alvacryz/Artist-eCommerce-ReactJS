@@ -20,8 +20,10 @@ const Form = ({cart, total, clearCart}) =>{
 
       const newOrderRef = collection(db, "orders");
       const newDoc = await addDoc(newOrderRef, newOrder);
-      console.log('El ID de la orden es: '+ newDoc.id);
-      alert('Shit works');
+
+      alert('Thank you for your purchase!');
+      alert('Your order ID is: ' + newDoc.id + '. Make sure to write it down just in case!');
+      clearCart();
     };
 
     function handleChange(e) {
@@ -35,44 +37,54 @@ const Form = ({cart, total, clearCart}) =>{
     return(
     <>
     <form
+      className='cartDataForm'
       onChange={handleChange}
       onSubmit={handleSubmit}
     >
-      <div>
         <h3>Completa tus Datos:</h3>
-        <label htmlFor="name">Name:</label>
-        <input name="name" className="w-full" id="name" required />
-        <label htmlFor="phone">Tel:</label>
-        <input name="phone" type="number" className="w-full" id="phone" />
-        <label htmlFor="E-mail">Email:</label>
-        <input
-          onChange={handleChange}
-          type="email"
-          id="email1"
-          name="email1"
-          className="w-full"
-          required
-        />
-        <label htmlFor="E-mail" required>
-          Confirmar Email:
-        </label>
-        <input
-          type="email"
-          onChange={handleChange}
-          id="email2"
-          name="email2"
-          required
-        />
-        {formData.email1 === formData.email2 ? (
-          <button onClick={handleSubmit}>
-            Terminar Compra
+        <div className='formCartSection'>
+          <div>
+            <label htmlFor="name">Name:</label>
+            <input name="name" id="name" required />
+          </div>
+          <div>
+            <label htmlFor="phone">Tel:</label>
+            <input name="phone" type="number" id="phone" required/>
+          </div>
+          <div>
+            <label htmlFor="E-mail">Email:</label>
+            <input
+              onChange={handleChange}
+              type="email"
+              id="email1"
+              name="email1"
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="E-mail" required>
+              Confirmar Email:
+            </label>
+            <input
+              type="email"
+              onChange={handleChange}
+              id="email2"
+              name="email2"
+              required
+            />
+          </div>
+        </div>
+        
+        { formData.name != null && formData.phone != null && formData.email1 != null && formData.email2 != null && formData.email1 === formData.email2 ? (
+          <button className="formButtonPurchase" type="submit" onClick={handleSubmit}>
+            Purchase
           </button>
         ) : (
-          <div>
-            Terminar Compra
-          </div>
+          <button className="formButtonPurchase">
+            Purchase
+          </button>
         )}
-      </div>
+      
     </form>
     </>
     )

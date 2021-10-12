@@ -1,19 +1,21 @@
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import { useParams } from 'react-router';
 import { db } from "../service/getFirebase.jsx"
-import { onSnapshot, collection } from 'firebase/firestore';
+import { onSnapshot, collection, orderBy, query } from 'firebase/firestore';
 import Items from './ItemList.jsx'
 
 const ContainerItem = () => {
-
   const [productos, setProducto] = useState([])
   const [loading, setLoading] = useState(true)
 
   // Category ID for routing
   const {categoryid} = useParams()
-    
+
+
   useEffect( () => {
-    onSnapshot(collection(db, "items"), (resp) => {
+    const itemRef = query(collection(db, "items"), orderBy("id", "asc"));
+    
+    onSnapshot(itemRef, (resp) => {
       if(resp.size === 0){
         console.log('Firebase items response is empty!');
       } else{

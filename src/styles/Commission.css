@@ -1,0 +1,59 @@
+.commissionMain{
+    height: auto;
+    margin: 50px;
+
+    border: 10px double #2d3436; 
+    background-color: rgb(194, 194, 194);
+} .commissionMain h2{
+    height: 25px; width: 100%;
+    margin: 0; padding-top: 10px; padding-bottom: 10px;
+
+    display: grid; align-items: center; justify-content: center;
+
+    background-image: linear-gradient(180deg, rgb(24, 24, 24) 10%, #2d3436 99%);
+    color: white;
+    font-size: 20px; font-weight:normal; font-style: italic;
+    letter-spacing: 5px;
+}
+
+.commissionMenu{
+    width: 100%;
+
+    display: flex; flex-direction: row;
+    justify-content: space-evenly;
+
+    list-style: none;
+} .commissionMenu a{
+    height: 50px; width: 20%;
+    padding: 5px;
+
+    display: flex;
+    justify-content: center; align-items: center;
+
+    color: white;
+    font-size: 16px; letter-spacing: 2px;
+    background-image: linear-gradient(360deg, rgb(24, 24, 24) 10%, #2d3436 99%);
+    border: 1px solid black;
+    opacity: 100%;
+    
+    transition-duration: 0.5s;
+} .commissionMenu a:hover{
+    letter-spacing: 5px;
+    border-color: #495457;
+    opacity: 90%;
+}
+
+@media screen and (max-width:768px){
+    .commissionMenu{
+        flex-direction: column;
+    } .commissionMenu a{
+        width: 100%;
+        margin: 0; padding: 0;
+        font-size: 14px;
+    }
+    .commissionMain h2{
+        text-align: center;
+        font-size: 16px;
+        height: 75px;
+    }
+}

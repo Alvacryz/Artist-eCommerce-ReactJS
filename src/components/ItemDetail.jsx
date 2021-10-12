@@ -17,21 +17,23 @@ const ItemDetail = ( {producto} ) => {
 
     return(
       <>
-      <div key={producto.id} className='cardWrapper'>
-        <img src={producto.image} alt="" className='cardDetailImage'/>
-        <div className='cardDetail'>
-            <h1 className='cardDetailName'>{producto.name}</h1>
-            <p className='cardDetailDesc'>{producto.desc}</p>
-            <p>Precio: "{producto.price}$"</p>
-            {display ? 
-            <ItemCount onAdd={onAdd} setDisplay={setdisplay} stock={producto.stock}/>
-            :
-            <Link to='/cart'>
-            <button className='buttonBuy'>Finish your purchase</button>
-            </Link>
-            }
+      <main className='cardMain'>
+        <div key={producto.id} className='cardWrapper'>
+          <img src={producto.image} alt=""/>
+          <div className='cardDetail'>
+              <h1>{producto.name}</h1>
+              <p className='cardDetailDesc'>"{producto.desc}"</p>
+              <h1>{producto.price}$ USD</h1>
+              {display ? 
+              <ItemCount onAdd={onAdd} setDisplay={setdisplay} stock={producto.stock}/>
+              :
+              <Link to='/cart'>
+              <button className='buttonBuy'>Finish your purchase</button>
+              </Link>
+              }
+          </div>
         </div>
-      </div>
+      </main>
       </>
     )
 }

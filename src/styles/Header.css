@@ -1,11 +1,45 @@
 .headerStyle{
-    height: 250px;
+    height: 100vh;
 
-    display: flex;
-    justify-content: center; align-items: center;
+    display: flex; flex-direction: column;
+    justify-content: space-between; align-items: center;
 
-    font-weight: bolder; letter-spacing: 10px;
-    background-color: rgb(204, 204, 204);
+    color: white;
+    text-align: center;
 
-    font-size: 40px; letter-spacing: 20px;
+    background-image: url('../images/sample_minimalist_wallpaper.jpg');
+    background-position: center; background-size:cover; 
+    background-repeat: no-repeat;
+
+    border-bottom: 6px double #3D4573; 
+}
+.headerStyle_title{
+    font-size: 75px;
+    font-weight: bolder; 
+    letter-spacing: 30px;
+}
+.headerStyle_text{
+    font-size: 20px;
+    font-style: italic;
+    letter-spacing: 5px;
+}
+.headerStyle_title, .headerStyle_text{
+    margin: 35px;
+}
+
+@media screen and (max-width:768px){
+    .headerStyle{
+        height: 100vh; width: 100%;
+        justify-content:space-between;
+    }
+    .headerStyle_title{
+        margin-top: 75px;
+        letter-spacing: 20px;
+    } .headerStyle_title:hover{
+        pointer-events: none;
+    }
+    .headerStyle_text{
+        margin-bottom: 50px;
+        font-size: 15px;
+    }
 }

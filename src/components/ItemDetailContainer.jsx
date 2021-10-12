@@ -11,13 +11,13 @@ import ItemDetail from './ItemDetail.jsx'
 const ContainerDetail = () => {
   const [producto, setProducto] = useState({});
   const [loading, setLoading] = useState(true);
-
   const {id} = useParams();
-  const idstring = parseInt(id);
 
-  const queryDB = query(collection(db, "items"), where("id", "==", idstring)) 
 
   useEffect( () => {
+    const idstring = parseInt(id);
+    const queryDB = query(collection(db, "items"), where("id", "==", idstring)) 
+
     onSnapshot( queryDB , (res) => {
       res.forEach( (i) => {
         setProducto(i.data());

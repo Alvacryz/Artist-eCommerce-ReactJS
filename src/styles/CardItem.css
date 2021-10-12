@@ -1,27 +1,39 @@
 .cardContainer{
-    display: flex; flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-
-    text-align: center;
+    height: 100%; width: 100%;
+    display: flex; flex-direction: row; flex-wrap: wrap;
+    justify-content: space-around; align-items: center;
 }
 
 .itemCard{
-    height: 400px; width: 300px;
-    margin: 30px; padding: 10px;
+    height: 350px; width: 250px;
+    margin-top: 30px; margin-bottom: 30px;
 
     display: flex; flex-direction: column;
     justify-content: space-evenly; align-items: center;
 
-    background-color: rgb(127, 116, 134);
-    border: 1px solid black; border-radius: 10px;
-    box-shadow: rgb(87, 84, 84) 10px 10px 10px;
+    background-color: #ece5e4;
+    border: 2px solid rgb(83, 81, 81); border-radius: 5px;
+
+    transition-duration: 0.2s;
+} .itemCard h1{
+    font-size: 18px;
+}
+
+.itemCard img{
+    height: auto; width: 200px;
+    filter: grayscale(1);
+    transition-duration: 0.5s;
+} .itemCard:hover{
+    height: 360px; width: 260px;
+    box-shadow: #ffffff 1px 1px 20px 5px;
+    border: 5px double #b6b0af;
+} .itemCard:hover img{
+    filter: grayscale(0);
 }
 
 .itemCardTitle{
     margin: 0;
-    font-size: 20px; font-style: italic;
-    letter-spacing: 2px;
+    font-size: 25px;
 }
 
 .itemCardPrice{
@@ -45,7 +57,7 @@
 } .itemCardButton:hover{
     color: white; font-weight: bold;
     background-color: black;
-    opacity: 50%;
+    opacity: 80%;
 }
 
 .itemImage{

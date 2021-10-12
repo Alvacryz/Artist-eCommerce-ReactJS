@@ -10,14 +10,16 @@ const Cart = () => {
   const total = totalPrice();
 
   return (
-    <div>
+    <>
+    <main className='mainCart'>
       <table>
         <thead>
-          <tr className='cartWrapper'>
-            <th className='cartBlockOne'>Items</th>
-            <th className='cartBlockTwo'>Details</th>
-            <th className='cartBlockThree'>Quantity</th>
-            <th className='cartBlockFour'>Total</th>
+          <tr>
+            <th >Items</th>
+            <th>Details</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -25,7 +27,6 @@ const Cart = () => {
           cart.map((i) => (
             <>
               <ItemCart
-                key={i.item.id}
                 name={i.item.name}
                 price={i.item.price}
                 url={i.item.image}
@@ -35,41 +36,53 @@ const Cart = () => {
             </>
           ))
           ) : (
-          <p>Your cart is empty!</p>
+          <>
+          <tr>
+            <td>- - -</td>
+            <td>- - -</td>
+            <td>- - -</td>
+            <td>- - -</td>
+            <td></td>
+          </tr>
+          </>
           )}
         </tbody>
       </table>
-      
-      {cartItemsNumber() > 0 && (
+
+      <hr/>
+      <div className='cartFooter'>
+        {total !== 0 ?
         <>
-          <hr/>
-          <div className='cartFooter'>
-            <p>Subtotal</p>
-            <p>${total} USD</p>
-          </div>
-          <Link to="/">
-            <button>
-              Continue shopping
-            </button>
-          </Link>
+          <p>Subtotal:</p>
+          <p>${total} USD</p>
         </>
-      )}
+        :
+          ``
+        }
+      </div>
+      <hr />
+      <div className='cartButtonMenu'>
+        {cartItemsNumber() > 0 && (
+          <>
+            <Link className='cartContinueButton' to="/commission">
+              Continue shopping
+            </Link>
+            <Link to="/cart" className='cartEmptyButton' onClick={clearCart}>
+                Empty Cart
+            </Link>
+          </>
+        )}
 
-      {cartItemsNumber() > 0 && (
-        <button onClick={clearCart}>
-          Empty Cart
-        </button>
-      )}
-
-      {cartItemsNumber() === 0 && (
-        <Link to="/">
-          <button>
+        {cartItemsNumber() === 0 && (
+          <Link to="/commission" className='cartReturnButton'>
             Go back to shopping
-          </button>
-        </Link>
-      )}
+          </Link>
+        )}
+      </div>
+      <hr />
       <Form cart={cart} total={total} clearCart={clearCart}/>
-    </div>
+    </main>
+    </>
   );
 };
 

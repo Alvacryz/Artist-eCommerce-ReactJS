@@ -6,14 +6,21 @@ function CartWidget(){
     const { cartItemsNumber } = useCartContext()
     const num = cartItemsNumber()
 
+    function clickSnapTop(){
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'});
+    };
+
     return(
-        <Link to='/cart'>
-            <button className = "navButton navIcon">
-                <img src="https://img.icons8.com/material-outlined/24/000000/shopping-cart--v1.png" alt=""/>
+        <Link to='/cart' onClick={clickSnapTop}>
+            <button className = "navButtonCartWidget navIcon">
+                <i className = "fas fa-shopping-cart"></i>
                 {cartItemsNumber() > 0 ? (
-                    <p className='cartWidgetNumber'>[{num}]</p>
+                    <p className = "cartWidgetNumber">{num}</p>
                     ) : (
-                    <p className='cartWidgetNumber'></p>
+                    ``
                 )}
             </button>
         </Link>
