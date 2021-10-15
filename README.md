@@ -1,3 +1,8 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d7a6e4e4-910b-4749-9972-f2609470cdbc/deploy-status)](https://app.netlify.com/sites/affectionate-varahamihira-6b0f20/deploys)
+
+# Web Demo:
+https://alvarts-reactjs-ecommerce.netlify.app/
+
 # Idea para el proyecto:
 
 El proyecto es en base a una simple pagina de e-commerce para el store de un artista independiente en el cual presenta distintos tipos de obras artisticas con sus diferentes niveles de tamaño y detalle para la venta de su servicio.
