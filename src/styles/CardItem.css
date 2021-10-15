@@ -52,12 +52,11 @@
     border: 2px solid darkgray; border-radius: 8%;
     background-color: #e7e7e7; 
 
-    transition-delay: 0s;
     transition-duration: 0.5s;
 } .itemCardButton:hover{
     color: white; font-weight: bold;
     background-color: black;
-    opacity: 80%;
+    opacity: 0.5;
 }
 
 .itemImage{

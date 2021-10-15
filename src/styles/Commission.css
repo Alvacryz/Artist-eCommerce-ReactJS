@@ -39,7 +39,7 @@
 } .commissionMenu a:hover{
     letter-spacing: 5px;
     border-color: #495457;
-    opacity: 75%;
+    opacity: 0.5;
 }
 
 @media screen and (max-width:768px){

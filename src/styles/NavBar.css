@@ -59,7 +59,7 @@
 
     cursor: pointer;
 } .navButtonCartWidget:hover{
-    opacity: 75%;
+    opacity: 0.5;
 }
 
 .navButton{
@@ -89,8 +89,10 @@
 
     border: 1px solid #2d3436;
     color: white;
+
+    transition-duration: 0.5s;
 } .navButtonList:hover{
-    opacity: 80%;
+    opacity: 0.5;
 }
 
 /* Logo Styling */
@@ -148,5 +150,9 @@ a{
 
         color: white;
         cursor: pointer;
+
+        transition-duration: 0.5s;
+    } .navListButton:hover{
+        opacity: 0.5;
     }
 }

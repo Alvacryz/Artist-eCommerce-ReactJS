@@ -52,8 +52,10 @@
     background-color: rgb(212, 212, 212);
 
     font-size: 20px; font-style: italic; letter-spacing: 2px;
+
+    transition-duration: 0.5s;
 } .buttonBuy:hover{
-    opacity: 75%;
+    opacity: 0.5;
 }
 
 @media screen and (max-width: 768px){
