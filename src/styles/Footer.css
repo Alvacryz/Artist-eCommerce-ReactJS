@@ -24,7 +24,7 @@ footer{
     display: flex; flex-direction: row;
     justify-content: center; align-items: center;
 } .footerSocialSection:hover{
-    opacity: 60%;
+    opacity: 0.5;
 }
 
 .footerSocialSection p{
@@ -84,7 +84,7 @@ footer{
 
     transition-duration: 0.2s;
 } .footerSection-submit:hover{
-    opacity: 75%;
+    opacity: 0.5;
 }
 
 @media screen and (max-width:1024px){

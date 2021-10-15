@@ -13,8 +13,6 @@
     background-color: rgb(212, 212, 212);
     font-size: 20px; letter-spacing: 3px;
     cursor: pointer;
-} .itemContainer button:hover{
-    opacity: 80%;
 }
 
 .itemCounter{
